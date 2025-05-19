@@ -46,4 +46,39 @@ body {
     width: 40px;
     height: auto;
   }
+  @font-face {
+    font-family: 'UVNHaiBaTrung';
+    src: url('UVN-HaiBaTrung.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* Basic Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Body/HTML Styling */
+  body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'UVNHaiBaTrung', sans-serif; /* Main font is Hai Ba Trung */
+    color: #fff;
+    overflow: hidden;
+    cursor: default;
+  }
+  
+  /* Background consistent with style.css */
+  body {
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(17, 17, 17, 0.5) 100%),
+        url('../asset/img/Elephant Background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #000;
+  }
   
