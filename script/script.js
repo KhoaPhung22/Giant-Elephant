@@ -35,11 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-    document.querySelectorAll('.slot').forEach(slot => {
-        slot.addEventListener('mouseenter', () => {
-          const hoverSound = new Audio('asset/audio/rpg-sound-effect.mp3');
-          hoverSound.play();
-        });
-      });
-      
 });

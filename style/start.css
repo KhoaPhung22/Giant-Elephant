@@ -6,12 +6,12 @@
   font-style: normal;
   font-display: swap;
 }
-
 /* Basic Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url('../asset/img/8-bit_spear_2.png'), auto;
 }
 
 /* Global Body/HTML Styling */
@@ -21,7 +21,7 @@ body, html {
   font-family: 'UVNHaiBaTrung', sans-serif; /* Main font is Hai Ba Trung */
   color: #fff;
   overflow: hidden;
-  cursor: default;
+  cursor: url('../asset/img/8-bit_spear_2.png'), auto;
 }
 
 /* Background consistent with style.css */
@@ -71,12 +71,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+ cursor: url('../asset/img/8-bit_spear_2.png'), auto;
 }
 
 .initial-splash-content.fade-out {
   opacity: 0;
   transform: translateY(-20px);
-  pointer-events: none;
+  cursor: url('../asset/img/8-bit_spear_2.png'), auto;
 }
 
 .subtitle {
@@ -86,6 +87,7 @@ body {
   color: #fff;
   opacity: 0.9;
   letter-spacing: 0.1em;
+ cursor: url('../asset/img/8-bit_spear_2.png'), auto;
 }
 
 .start {
@@ -97,26 +99,26 @@ body {
   animation: pulse 2s infinite ease-in-out;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  cursor: pointer;
   padding: 0.5rem 1rem;
+  cursor: url('../asset/img/8-bit\ spear\ 2.cur'), auto;
 }
 
 /* Game Menu Styles */
 .game-menu {
   opacity: 0;
-  pointer-events: none;
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  cursor: url('../asset/img/8-bit_spear_2.png'), auto;
 }
 
 .game-menu.visible {
   opacity: 1;
-  pointer-events: auto;
   transform: translateY(0);
+  cursor: url('../asset/img/8-bit_spear_2.png'), auto;
 }
 
 .menu-item {
@@ -138,13 +140,12 @@ body {
   text-shadow: 0 0 10px #aaaaff;
   border-color: #c3baff;
   background-color: rgba(195, 186, 255, 0.1);
+  cursor: url('../asset/img/8-bit_spear_2.png'), auto;
 }
 
 .menu-item.disabled {
   opacity: 0.3;
-  pointer-events: none;
   text-shadow: none;
-  cursor: not-allowed;
 }
 
 /* COPYRIGHT FOOTER */
@@ -159,7 +160,6 @@ body {
   text-shadow: 0 0 4px #000;
   white-space: nowrap;
 }
-
 /* Animations */
 @keyframes fadeIn {
   from {
