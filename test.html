@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heart of Steel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+   <!-- Background Music (Hidden) -->
+   <audio id="bg-music" autoplay loop>
+    <source src="asset/audio/background-music.mp3" type="audio/mpeg">
+  </audio>
+  <!-- Sound Effects (Hover sound) -->
+  <audio id="hover-sound">
+    <source src="asset/audio/rpg-sound-effect.mp3" type="audio/mpeg">
+  </audio>
+  <div class="hero">
+    <div class="logo-container">
+      <div class="logo">Đại Tượng</div>
+      <div class="subtitle">— Heart of Steel —</div>
+    </div>
+
+    <div class="menu">
+      <a href="#" class="menu-item">New Game</a>
+      <a href="#" class="menu-item">Merchant’s Den</a>
+      <a href="#" class="menu-item disabled">Guide</a>
+      <a href="#" class="menu-item disabled">Quest</a>
+      <a href="#" class="menu-item disabled">World Map</a>
+    </div>
+
+    <footer class="footer">© 2025 HOUND ARCHIVES™. All Rights Reserved.</footer>
+  </div>
+
+  <script src="script/main.js"></script>
+</body>
+<script>
+  document.addEventListener('click', function () {
+    const audio = document.getElementById('bg-music');
+    if (audio.paused) {
+      audio.play().catch(e => {
+        console.log("Autoplay failed:", e);
+      });
+    }
+  }, { once: true }); // Only trigger once
+</script>
+<script>
+  document.addEventListener('click', function () {
+    const audio = document.getElementById('bg-music');
+    audio.volume = 0.1; // Set volume to 20%
+    if (audio.paused) {
+      audio.play().catch(e => {
+        console.log("Autoplay failed:", e);
+      });
+    }
+  }, { once: true });
+
+  // Hover sound effect
+  const hoverSound = document.getElementById('hover-sound');
+  const menuItems = document.querySelectorAll('.menu-item:not(.disabled)');
+
+  menuItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      hoverSound.currentTime = 0; // Rewind to start
+      hoverSound.play().catch(e => {
+        console.log("Hover sound failed:", e);
+      });
+    });
+  });
+</script>
+
+</html>
