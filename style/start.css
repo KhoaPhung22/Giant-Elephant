@@ -23,7 +23,7 @@ html, body {
   color: #fff;
   background: 
     linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(17, 17, 17, 0.5)),
-    url('../asset/img/Elephant Background.png') center center / cover no-repeat;
+    url('../asset/img/Elephant\ Background2.png') center center / cover no-repeat;
   background-color: #000;
   overflow: hidden;
 }
@@ -119,6 +119,7 @@ html, body {
   transition: all 0.3s ease;
   text-shadow: 0 0 6px #c3baff;
   border: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .menu-item:hover {

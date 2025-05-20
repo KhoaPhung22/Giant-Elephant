@@ -75,10 +75,315 @@ body {
   body {
     background-image:
         linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(17, 17, 17, 0.5) 100%),
-        url('../asset/img/Elephant Background.png');
+        url('../asset/img/Elephant\ Background2.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-color: #000;
   }
+  /* Custom styles for the Costume Shack - Refined and Responsive */
+body {
+  font-family: 'UVNHaiBaTrung', sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.container {
+  max-width: 1200px; /* Increased max-width for larger screens */
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content vertically in the container */
+  min-height: 100vh; /* Ensure full viewport height */
+  justify-content: flex-start; /* Align items to the start (top) */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+main {
+  display: flex;
+  flex-direction: column; /* Stack sections on small screens */
+  align-items: stretch; /* Stretch items to container width */
+  width: 100%;
+  gap: 2rem; /* Increased gap between main sections */
+}
+
+.product-selection {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Enable scrolling for long product lists */
+  max-height: 500px; /* Limit max height, adjust as needed */
+}
+
+.product-selection h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.product-selector {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.product-selector:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-selector.active {
+  background-color: #c3baff;
+  color: #000000;
+  border-color: #c3baff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+.product-showcase {
+  flex: 2;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically center content */
+  min-height: 300px; /* Ensure a minimum height */
+  position: relative; /* Needed for absolute positioning of 360 view */
+  overflow: hidden;
+}
+
+.product-showcase h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  text-align: center; /* Center heading */
+}
+
+.product-image-container {
+  /* width and height of your 360 view */
+  width: 80%;
+  max-width: 400px; /* Example max width */
+  height: auto; /* Keep aspect ratio */
+  aspect-ratio: 1 / 1;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  /* background-color: rgba(255, 255, 255, 0.1);  Remove background, let images show through*/
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */ /* Remove border */
+  position: relative; /* Important for absolute positioning of frames */
+  /* overflow: hidden;  Important, to clip overflowing frames. */
+}
+
+.product-image-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out; /* Smooth transition between frames */
+  /* display: none;  Removed, use opacity 0/1 instead */
+  border-radius: 0.75rem;
+  object-fit: contain;
+  /* object-fit: cover; */ /* Or 'cover', depending on how you want the images to fill the container */
+}
+
+.product-image-frame.active {
+  opacity: 1;
+  /* display: block;  Removed */
+}
+
+
+.price-display {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center price */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center price */
+  align-items: center;
+}
+
+.price-display h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.price-display p {
+  font-size: 2.5rem; /* Increased font size for price */
+  font-weight: bold;
+  color: #c3baff;
+  text-shadow: 0 0 8px #c3baff;
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.7;
+  text-shadow: 0 0 3px #000000;
+}
+
+/* Media Queries for Responsiveness - Refined */
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .container {
+      padding: 1.5rem;
+  }
+
+  header h1 {
+      font-size: 2.5rem;
+  }
+
+  main {
+      flex-direction: column; /* Stack sections on tablets too */
+      gap: 1.5rem;
+  }
+
+  .product-selection, .product-showcase, .price-display {
+      padding: 1rem;
+  }
+
+  .product-selection h2, .product-showcase h2, .price-display h2 {
+      font-size: 1.6rem;
+  }
+
+  .product-selector {
+      font-size: 1.1rem;
+  }
+
+  .product-showcase {
+      min-height: 250px;
+  }
+
+  .price-display p {
+      font-size: 2rem;
+  }
+  .product-image-container{
+      width: 90%;
+      max-width: 350px;
+  }
+}
+
+/* For typical mobile phones */
+@media (max-width: 768px) {
+  .container {
+      padding: 1rem;
+  }
+
+  header h1 {
+      font-size: 2rem;
+  }
+
+  main {
+      flex-direction: column; /* Stack sections on phones */
+      gap: 1rem;
+  }
+
+  .product-selection, .product-showcase, .price-display {
+      padding: 1rem;
+  }
+  .product-selection h2, .product-showcase h2, .price-display h2{
+      font-size: 1.4rem;
+  }
+
+  .product-selector {
+      font-size: 1rem;
+      padding: 0.75rem;
+  }
+
+  .product-showcase {
+      min-height: 200px;
+  }
+  .price-display p{
+      font-size: 1.5rem;
+  }
+  .product-image-container{
+      width: 95%;
+      max-width: 300px;
+  }
+}
+
+/* For very small phones (e.g., iPhone SE) */
+@media (max-width: 480px) {
+  .container {
+      padding: 0.75rem;
+  }
+
+  header h1 {
+      font-size: 1.75rem;
+  }
+  .product-selection h2, .product-showcase h2, .price-display h2 {
+      font-size: 1.2rem;
+  }
+
+  main {
+      gap: 0.75rem;
+  }
+
+  .product-selection, .product-showcase, .price-display {
+      padding: 0.8rem;
+  }
+
+  .product-selector {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+  }
+  .product-showcase{
+      min-height: 180px;
+  }
+  .price-display p {
+      font-size: 1.2rem;
+  }
+  .product-image-container{
+      width: 100%;
+      max-width: 280px;
+  }
+}
+
   
